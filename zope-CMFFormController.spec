@@ -1,25 +1,26 @@
-%define product         CMFFormController
-%define version         2.0.6
-%define release         1
+%define Product CMFFormController
+%define product cmfformcontroller
+%define name    zope-%{Product}
+%define version 2.1
+%define release %mkrel 1
 
 %define zope_minver     2.6
-
 %define zope_home       %{_prefix}/lib/zope
 %define software_home   %{zope_home}/lib/python
 
-Summary:        CMFFormController replaces the portal_form form validation mechanism from Plone
-Name:           zope-%{product}
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        GPL
-Group:          System/Servers
-Source:         http://plone.org/products/cmfformcontroller/releases/%{version}/CMFFormController-%{version}.tar.bz2
-URL:            http://plone.org/products/cmfformcontroller
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:      noarch
-Requires:       zope >= %{zope_minver}
-Requires:       zope-CMF >= 1.3
-Epoch:          1
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:    CMFFormController replaces the portal_form form validation mechanism from Plone
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
+License:    GPL
+Group:      System/Servers
+Requires:   zope >= %{zope_minver}
+Requires:   zope-CMF >= 1.3
+Epoch:      1
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 CMFFormController replaces the portal_form form validation
@@ -53,9 +54,5 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
-
-
-
-
