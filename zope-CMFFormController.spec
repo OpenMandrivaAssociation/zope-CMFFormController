@@ -20,6 +20,7 @@ Requires:   zope >= %{zope_minver}
 Requires:   zope-CMF >= 1.3
 Epoch:      1
 BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 CMFFormController replaces the portal_form form validation
