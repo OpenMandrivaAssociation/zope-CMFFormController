@@ -2,7 +2,7 @@
 %define product cmfformcontroller
 %define name    zope-%{Product}
 %define version 2.1.1
-%define release %mkrel 4
+%define release %mkrel 5
 
 %define zope_minver     2.6
 %define zope_home       %{_prefix}/lib/zope
